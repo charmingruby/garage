@@ -1,5 +1,5 @@
 # STEP 1: Build
-FROM --platform=linux/amd64 golang:1.23.3-alpine AS builder
+FROM golang:1.23.3-alpine AS builder
 RUN apk update && apk add --no-cache git upx
 WORKDIR /build
 COPY . .
@@ -10,9 +10,8 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH="amd64" go build -ldflags="-w -s" -o ./bin/a
 RUN upx --best --lzma ./bin/api
 
 # STEP 3: Run
-FROM --platform=linux/amd64 alpine:latest
+FROM alpine:latest
 WORKDIR /app
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk*
 COPY --from=builder /build/bin/api ./api
-
 CMD [ "/app/api" ]
