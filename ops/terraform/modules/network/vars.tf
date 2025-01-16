@@ -1,13 +1,6 @@
-variable "aws_region" {
+variable "namespaced_department_name" {
+  description = "The department name to namespace the resources"
   type        = string
-  description = "AWS region"
-  default     = "us-east-1"
-}
-
-variable "environment" {
-  type        = string
-  description = "Environment"
-  default     = "dev"
 }
 
 variable "network" {
@@ -61,3 +54,4 @@ variable "create_vpc_endpoint" {
   type        = bool
   default     = false
 }
+
