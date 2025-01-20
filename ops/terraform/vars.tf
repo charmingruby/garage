@@ -66,3 +66,14 @@ variable "allowed_ip" {
   type        = string
   description = "The IP address to allow SSH access from"
 }
+
+variable "key_name" {
+  type        = string
+  description = "The key pair name to use for the bastion host"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "The instance type to use for the bastion host"
+  default     = "t2.micro"
+}

@@ -17,3 +17,7 @@ output "selected_availability_zones" {
 output "vpc" {
   value = module.network.vpc_config
 }
+
+output "bastion_host_sg_id" {
+  value = module.compute.bastion_host_sg_id
+}

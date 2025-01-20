@@ -18,4 +18,6 @@ module "compute" {
   environment                = var.environment
   aws_region                 = var.aws_region
   allowed_ip                 = var.allowed_ip
+  key_name                   = var.key_name
+  instance_type              = var.instance_type
 }
