@@ -1,7 +1,3 @@
-# module "data" {
-#   source = "./modules/data"
-# }
-
 module "network" {
   source = "./modules/network"
 
