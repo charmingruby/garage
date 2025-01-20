@@ -61,3 +61,8 @@ variable "create_vpc_endpoint" {
   type        = bool
   default     = false
 }
+
+variable "allowed_ip" {
+  type        = string
+  description = "The IP address to allow SSH access from"
+}
