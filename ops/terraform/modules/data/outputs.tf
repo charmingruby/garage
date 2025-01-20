@@ -1,4 +1,4 @@
-output "remove_state_bucket" {
+output "remote_state_bucket" {
   value = {
     arn  = aws_s3_bucket.remote_state.arn
     name = aws_s3_bucket.remote_state.bucket
